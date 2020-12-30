@@ -88,6 +88,5 @@ class UserProfilePic extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }

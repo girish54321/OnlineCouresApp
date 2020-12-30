@@ -88,13 +88,15 @@ class AudioPlayerUi extends StatelessWidget {
           child: FadeAnimation(
             0.2,
             Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Stack(
                   children: [
                     Container(
                         padding: EdgeInsets.symmetric(horizontal: 22),
                         color: Colors.white,
-                        height: 120.00,
+                        height: 140.00,
                         width: double.infinity,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -138,24 +140,20 @@ class AudioPlayerUi extends StatelessWidget {
                             ),
                           ],
                         )),
-                    Container(
-                      height: 4,
-                      child: FlutterSlider(
-                        handlerHeight: 2.0,
-                        tooltip: FlutterSliderTooltip(disabled: false),
-                        handler: FlutterSliderHandler(child: Text("")),
-                        trackBar: FlutterSliderTrackBar(
-                            inactiveTrackBar:
-                                BoxDecoration(color: Colors.grey.shade300),
-                            activeTrackBar: BoxDecoration(
-                                color: Theme.of(context).accentColor)),
-                        values: [300],
-                        max: 500,
-                        min: 0.0,
-                        onDragging: (handlerIndex, lowerValue, upperValue) {
-                          print(lowerValue);
-                        },
-                      ),
+                    FlutterSlider(
+                      handlerHeight: 14.0,
+                      handler: FlutterSliderHandler(child: Text("")),
+                      trackBar: FlutterSliderTrackBar(
+                          inactiveTrackBar:
+                              BoxDecoration(color: Colors.grey.shade300),
+                          activeTrackBar: BoxDecoration(
+                              color: Theme.of(context).accentColor)),
+                      values: [300],
+                      max: 500,
+                      min: 0.0,
+                      onDragging: (handlerIndex, lowerValue, upperValue) {
+                        print(lowerValue);
+                      },
                     ),
                   ],
                 ),

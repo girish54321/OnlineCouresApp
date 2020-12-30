@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class InputText extends StatefulWidget {
+class AppInputText extends StatefulWidget {
   final String hint;
   final Widget rightIcon;
   final Widget leftIcon;
@@ -12,8 +12,9 @@ class InputText extends StatefulWidget {
   final String errorText;
   final Function onChnaged;
   final FormFieldValidator validator;
+  final int maxInput;
 
-  const InputText(
+  const AppInputText(
       {Key key,
       this.hint,
       this.rightIcon,
@@ -25,19 +26,21 @@ class InputText extends StatefulWidget {
       this.textInputType,
       this.errorText,
       this.onChnaged,
-      this.validator});
+      this.validator,
+      this.maxInput});
 
   @override
-  _InputTextState createState() => _InputTextState();
+  _AppInputTextState createState() => _AppInputTextState();
 }
 
-class _InputTextState extends State<InputText> {
+class _AppInputTextState extends State<AppInputText> {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(bottom: 18, top: 9),
       decoration: BoxDecoration(),
       child: TextFormField(
+        maxLength: widget.maxInput != null ? widget.maxInput : null,
         keyboardType: widget.textInputType,
         focusNode: widget.focusNode,
         onChanged: widget.onChnaged,
@@ -46,7 +49,6 @@ class _InputTextState extends State<InputText> {
         controller: widget.textEditingController,
         validator: widget.validator,
         decoration: InputDecoration(
-            labelText: widget.hint,
             errorText: widget.errorText,
             prefixIcon: widget.leftIcon,
             suffixIcon: widget.rightIcon,

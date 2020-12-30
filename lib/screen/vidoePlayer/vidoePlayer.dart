@@ -1,10 +1,16 @@
+import 'package:OnlineCouresApp/screen/vidoePlayer/commetBox.dart';
 import 'package:OnlineCouresApp/screen/vidoePlayer/commetsView.dart';
 import 'package:OnlineCouresApp/screen/vidoePlayer/courseList.dart';
 import 'package:OnlineCouresApp/screen/vidoePlayer/videoIntroduction.dart';
 import 'package:OnlineCouresApp/widget/appAppBar.dart';
 import 'package:OnlineCouresApp/widget/bannersItems.dart';
+import 'package:OnlineCouresApp/widget/infoView.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:rules/rules.dart';
+import 'package:yoyo_player/yoyo_player.dart';
+import 'package:OnlineCouresApp/widget/appInputText.dart';
 
 class VideoPlayer extends StatefulWidget {
   VideoPlayer({Key key}) : super(key: key);
@@ -15,6 +21,8 @@ class VideoPlayer extends StatefulWidget {
 
 class _VideoPlayerState extends State<VideoPlayer>
     with TickerProviderStateMixin {
+  CommentModal commentModal = new CommentModal();
+  final commentsController = TextEditingController();
   TabController _tabController;
   final List<Container> myTabs = <Container>[
     Container(height: 44, child: Center(child: Text("Introduction"))),
@@ -45,6 +53,7 @@ class _VideoPlayerState extends State<VideoPlayer>
   void dispose() {
     _tabController.dispose();
     _tabController.removeListener(_setActiveTabIndex);
+    commentsController.dispose();
     super.dispose();
   }
 
@@ -78,6 +87,15 @@ class _VideoPlayerState extends State<VideoPlayer>
               ),
             ],
           ),
+          // YoYoPlayer(
+          //   aspectRatio: 16 / 9,
+          //   url:
+          //       "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4",
+          //   videoStyle: VideoStyle(),
+          //   videoLoadingStyle: VideoLoadingStyle(
+          //     loading: LoadingView(),
+          //   ),
+          // ),
           ListTile(
             trailing: IconButton(
                 icon: Icon(
@@ -131,7 +149,7 @@ class _VideoPlayerState extends State<VideoPlayer>
       floatingActionButton: _activeTabIndex == 2
           ? FloatingActionButton(
               onPressed: () {
-                setState(() {});
+                commentModal.mainBottomSheet(context, commentsController);
               },
               child: Icon(
                 EvaIcons.messageSquare,
