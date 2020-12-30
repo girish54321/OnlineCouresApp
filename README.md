@@ -1,16 +1,11 @@
 # OnlineCouresApp
 
-A new Flutter project.
+<img src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/showcase.png">
 
-## Getting Started
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604"  src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/home.jpg">  Home Screen |  <img width="1604" src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/book.jpg"> Book Screen |<img width="1604" src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/screen.jpg"> Profile Screen |
+|<img width="1604" src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/book_info.jpg"> Book info Screen |  <img width="1604" src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/player.jpg"> Video List Screen|<img width="1604" src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/video_player.jpg"> Vidoe Player Screen|
+|<img width="1604" src="https://github.com/girish54321/OnlineCouresApp/blob/main/app_image/video_list.jpg"> Player Screen |  |
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Design Credit](https://www.behance.net/gallery/85593251/Blume-Shopping-app-UI-Kit).
